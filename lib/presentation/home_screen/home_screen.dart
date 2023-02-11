@@ -3,6 +3,7 @@ import 'package:sizer/sizer.dart';
 import 'package:whether_now/application/home_screen/home_screen_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
+
 import 'package:whether_now/presentation/home_screen/widgets/custom_appbar.dart';
 import 'package:whether_now/presentation/home_screen/widgets/custom_weather_data.dart';
 
@@ -11,6 +12,7 @@ class DashboardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: BlocBuilder<HomeScreenBloc, HomeScreenState>(
         builder: (context, state) {
