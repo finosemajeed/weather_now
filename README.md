@@ -29,3 +29,13 @@ flutter_lints: 2.0.0
 flutter_test:
 sdk: flutter
 hive_generator: 2.0.0
+
+## screenshots
+![photo_2023-02-12_00-45-48_samsung-galaxys20ultra-cosmicgrey-portrait](https://user-images.githubusercontent.com/36195634/218277228-738e7b60-f12a-42d5-a632-28c08de5cff2.png)
+Splash screen
+
+![photo_2023-02-12_00-45-52_samsung-galaxys20ultra-cosmicgrey-portrait](https://user-images.githubusercontent.com/36195634/218277246-43ce64db-aa8f-4a35-91ca-b0b93c3fc2f3.png)
+Home Screen
+
+![photo_2023-02-12_00-45-55_samsung-galaxys20ultra-cosmicgrey-portrait](https://user-images.githubusercontent.com/36195634/218277254-c8247596-bbda-482f-ad16-a7b6077485fa.png)
+Search Screen
