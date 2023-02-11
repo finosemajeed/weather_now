@@ -1,6 +1,6 @@
-import 'package:whether_now/domain/core/api.dart';
 import 'package:whether_now/domain/model/weather_model/weather_model.dart';
 import 'package:http/http.dart' as http;
+import 'package:whether_now/infrastracture/core/api_end_points.dart';
 
 class WeatherRepository {
   Future<WeatherModel> fetchWeather() async {
