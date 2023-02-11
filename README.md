@@ -4,13 +4,26 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Live weather fetching mobile Application developed using flutter.
 
-A few resources to get you started if this is your first Flutter project:
+##dependencies:
+  cupertino_icons: 1.0.2
+  flutter:
+    sdk: flutter
+  flutter_bloc: 8.1.2
+  freezed: 2.3.2
+  freezed_annotation: 2.2.0
+  hive: 2.2.3
+  hive_flutter: 1.1.0
+  http: 0.13.5
+  intl: 0.18.0
+  lottie: 2.2.0
+  path_provider: 2.0.12
+  sizer: 2.0.15
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+##dev_dependencies:
+  build_runner: 2.3.3
+  flutter_lints: 2.0.0
+  flutter_test:
+    sdk: flutter
+  hive_generator: 2.0.0
