@@ -2,20 +2,26 @@
 //
 //     final weatherModel = weatherModelFromJson(jsonString);
 
+import 'package:hive/hive.dart';
 import 'dart:convert';
+
+part 'weather_model.g.dart';
 
 WeatherModel weatherModelFromJson(String str) =>
     WeatherModel.fromJson(json.decode(str));
 
 String weatherModelToJson(WeatherModel data) => json.encode(data.toJson());
 
+@HiveType(typeId: 1)
 class WeatherModel {
   WeatherModel({
     this.location,
     this.current,
   });
 
+  @HiveField(1)
   Location? location;
+  @HiveField(2)
   Current? current;
 
   factory WeatherModel.fromJson(Map<String, dynamic> json) => WeatherModel(
@@ -32,6 +38,7 @@ class WeatherModel {
       };
 }
 
+@HiveType(typeId: 2)
 class Current {
   Current({
     this.lastUpdatedEpoch,
@@ -59,28 +66,51 @@ class Current {
     this.gustKph,
   });
 
+  @HiveField(1)
   num? lastUpdatedEpoch;
+  @HiveField(2)
   String? lastUpdated;
+  @HiveField(3)
   num? tempC;
+  @HiveField(4)
   num? tempF;
+  @HiveField(5)
   num? isDay;
+  @HiveField(6)
   Condition? condition;
+  @HiveField(7)
   num? windMph;
+  @HiveField(8)
   num? windKph;
+  @HiveField(9)
   num? windDegree;
+  @HiveField(10)
   String? windDir;
+  @HiveField(11)
   num? pressureMb;
+  @HiveField(12)
   num? pressureIn;
+  @HiveField(13)
   num? precipMm;
+  @HiveField(14)
   num? precipIn;
+  @HiveField(15)
   num? humidity;
+  @HiveField(16)
   num? cloud;
+  @HiveField(17)
   num? feelslikeC;
+  @HiveField(18)
   num? feelslikeF;
+  @HiveField(19)
   num? visKm;
+  @HiveField(20)
   num? visMiles;
+  @HiveField(21)
   num? uv;
+  @HiveField(22)
   num? gustMph;
+  @HiveField(23)
   num? gustKph;
 
   factory Current.fromJson(Map<String, dynamic> json) => Current(
@@ -112,32 +142,31 @@ class Current {
       );
 
   Map<String, dynamic> toJson() => {
-        "last_updated_epoch": lastUpdatedEpoch,
-        "last_updated": lastUpdated,
-        "temp_c": tempC,
-        "temp_f": tempF,
-        "is_day": isDay,
-        "condition": condition?.toJson(),
-        "wind_mph": windMph,
-        "wind_kph": windKph,
-        "wind_degree": windDegree,
-        "wind_dir": windDir,
-        "pressure_mb": pressureMb,
-        "pressure_in": pressureIn,
-        "precip_mm": precipMm,
-        "precip_in": precipIn,
+        "last updated epoch": lastUpdatedEpoch,
+        "last updated": lastUpdated,
+        "celcius": tempC,
+        "fahrenheit": tempF,
+        "wind mph": windMph,
+        "wind kph": windKph,
+        "wind degree": windDegree,
+        "wind direction": windDir,
+        "pressure mb": pressureMb,
+        "pressure in": pressureIn,
+        "precip mm": precipMm,
+        "precip in": precipIn,
         "humidity": humidity,
         "cloud": cloud,
-        "feelslike_c": feelslikeC,
-        "feelslike_f": feelslikeF,
-        "vis_km": visKm,
-        "vis_miles": visMiles,
+        "feelslike c": feelslikeC,
+        "feelslike f": feelslikeF,
+        "vis km": visKm,
+        "vis miles": visMiles,
         "uv": uv,
-        "gust_mph": gustMph,
-        "gust_kph": gustKph,
+        "gust mph": gustMph,
+        "gust kph": gustKph,
       };
 }
 
+@HiveType(typeId: 3)
 class Condition {
   Condition({
     this.text,
@@ -145,9 +174,12 @@ class Condition {
     this.code,
   });
 
+  @HiveField(1)
   String? text;
+  @HiveField(2)
   String? icon;
-  int? code;
+  @HiveField(3)
+  num? code;
 
   factory Condition.fromJson(Map<String, dynamic> json) => Condition(
         text: json["text"],
@@ -162,6 +194,7 @@ class Condition {
       };
 }
 
+@HiveType(typeId: 4)
 class Location {
   Location({
     this.name,
@@ -174,13 +207,21 @@ class Location {
     this.localtime,
   });
 
+  @HiveField(1)
   String? name;
+  @HiveField(2)
   String? region;
+  @HiveField(3)
   String? country;
+  @HiveField(4)
   num? lat;
+  @HiveField(5)
   num? lon;
+  @HiveField(6)
   String? tzId;
-  int? localtimeEpoch;
+  @HiveField(7)
+  num? localtimeEpoch;
+  @HiveField(8)
   String? localtime;
 
   factory Location.fromJson(Map<String, dynamic> json) => Location(

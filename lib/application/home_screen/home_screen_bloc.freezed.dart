@@ -19,32 +19,38 @@ mixin _$HomeScreenEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function(String querry) fetchData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function(String querry)? fetchData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function(String querry)? fetchData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Started value) started,
+    required TResult Function(FetchData value) fetchData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Started value)? started,
+    TResult? Function(FetchData value)? fetchData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Started value)? started,
+    TResult Function(FetchData value)? fetchData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -111,6 +117,7 @@ class _$Started with DiagnosticableTreeMixin implements Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function(String querry) fetchData,
   }) {
     return started();
   }
@@ -119,6 +126,7 @@ class _$Started with DiagnosticableTreeMixin implements Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function(String querry)? fetchData,
   }) {
     return started?.call();
   }
@@ -127,6 +135,7 @@ class _$Started with DiagnosticableTreeMixin implements Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function(String querry)? fetchData,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -139,6 +148,7 @@ class _$Started with DiagnosticableTreeMixin implements Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Started value) started,
+    required TResult Function(FetchData value) fetchData,
   }) {
     return started(this);
   }
@@ -147,6 +157,7 @@ class _$Started with DiagnosticableTreeMixin implements Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Started value)? started,
+    TResult? Function(FetchData value)? fetchData,
   }) {
     return started?.call(this);
   }
@@ -155,6 +166,7 @@ class _$Started with DiagnosticableTreeMixin implements Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Started value)? started,
+    TResult Function(FetchData value)? fetchData,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -169,10 +181,152 @@ abstract class Started implements HomeScreenEvent {
 }
 
 /// @nodoc
+abstract class _$$FetchDataCopyWith<$Res> {
+  factory _$$FetchDataCopyWith(
+          _$FetchData value, $Res Function(_$FetchData) then) =
+      __$$FetchDataCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String querry});
+}
+
+/// @nodoc
+class __$$FetchDataCopyWithImpl<$Res>
+    extends _$HomeScreenEventCopyWithImpl<$Res, _$FetchData>
+    implements _$$FetchDataCopyWith<$Res> {
+  __$$FetchDataCopyWithImpl(
+      _$FetchData _value, $Res Function(_$FetchData) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? querry = null,
+  }) {
+    return _then(_$FetchData(
+      querry: null == querry
+          ? _value.querry
+          : querry // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FetchData with DiagnosticableTreeMixin implements FetchData {
+  const _$FetchData({required this.querry});
+
+  @override
+  final String querry;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'HomeScreenEvent.fetchData(querry: $querry)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'HomeScreenEvent.fetchData'))
+      ..add(DiagnosticsProperty('querry', querry));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FetchData &&
+            (identical(other.querry, querry) || other.querry == querry));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, querry);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FetchDataCopyWith<_$FetchData> get copyWith =>
+      __$$FetchDataCopyWithImpl<_$FetchData>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String querry) fetchData,
+  }) {
+    return fetchData(querry);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(String querry)? fetchData,
+  }) {
+    return fetchData?.call(querry);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String querry)? fetchData,
+    required TResult orElse(),
+  }) {
+    if (fetchData != null) {
+      return fetchData(querry);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Started value) started,
+    required TResult Function(FetchData value) fetchData,
+  }) {
+    return fetchData(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Started value)? started,
+    TResult? Function(FetchData value)? fetchData,
+  }) {
+    return fetchData?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Started value)? started,
+    TResult Function(FetchData value)? fetchData,
+    required TResult orElse(),
+  }) {
+    if (fetchData != null) {
+      return fetchData(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FetchData implements HomeScreenEvent {
+  const factory FetchData({required final String querry}) = _$FetchData;
+
+  String get querry;
+  @JsonKey(ignore: true)
+  _$$FetchDataCopyWith<_$FetchData> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$HomeScreenState {
   bool get isLoading => throw _privateConstructorUsedError;
   bool get isError => throw _privateConstructorUsedError;
   String get currentDay => throw _privateConstructorUsedError;
+  Map<String, dynamic> get searchResult => throw _privateConstructorUsedError;
   WeatherModel get weatherData => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -190,6 +344,7 @@ abstract class $HomeScreenStateCopyWith<$Res> {
       {bool isLoading,
       bool isError,
       String currentDay,
+      Map<String, dynamic> searchResult,
       WeatherModel weatherData});
 }
 
@@ -209,6 +364,7 @@ class _$HomeScreenStateCopyWithImpl<$Res, $Val extends HomeScreenState>
     Object? isLoading = null,
     Object? isError = null,
     Object? currentDay = null,
+    Object? searchResult = null,
     Object? weatherData = null,
   }) {
     return _then(_value.copyWith(
@@ -224,6 +380,10 @@ class _$HomeScreenStateCopyWithImpl<$Res, $Val extends HomeScreenState>
           ? _value.currentDay
           : currentDay // ignore: cast_nullable_to_non_nullable
               as String,
+      searchResult: null == searchResult
+          ? _value.searchResult
+          : searchResult // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
       weatherData: null == weatherData
           ? _value.weatherData
           : weatherData // ignore: cast_nullable_to_non_nullable
@@ -244,6 +404,7 @@ abstract class _$$_HomeScreenStateCopyWith<$Res>
       {bool isLoading,
       bool isError,
       String currentDay,
+      Map<String, dynamic> searchResult,
       WeatherModel weatherData});
 }
 
@@ -261,6 +422,7 @@ class __$$_HomeScreenStateCopyWithImpl<$Res>
     Object? isLoading = null,
     Object? isError = null,
     Object? currentDay = null,
+    Object? searchResult = null,
     Object? weatherData = null,
   }) {
     return _then(_$_HomeScreenState(
@@ -276,6 +438,10 @@ class __$$_HomeScreenStateCopyWithImpl<$Res>
           ? _value.currentDay
           : currentDay // ignore: cast_nullable_to_non_nullable
               as String,
+      searchResult: null == searchResult
+          ? _value._searchResult
+          : searchResult // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
       weatherData: null == weatherData
           ? _value.weatherData
           : weatherData // ignore: cast_nullable_to_non_nullable
@@ -293,7 +459,9 @@ class _$_HomeScreenState
       {required this.isLoading,
       required this.isError,
       required this.currentDay,
-      required this.weatherData});
+      required final Map<String, dynamic> searchResult,
+      required this.weatherData})
+      : _searchResult = searchResult;
 
   @override
   final bool isLoading;
@@ -301,12 +469,20 @@ class _$_HomeScreenState
   final bool isError;
   @override
   final String currentDay;
+  final Map<String, dynamic> _searchResult;
+  @override
+  Map<String, dynamic> get searchResult {
+    if (_searchResult is EqualUnmodifiableMapView) return _searchResult;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_searchResult);
+  }
+
   @override
   final WeatherModel weatherData;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HomeScreenState(isLoading: $isLoading, isError: $isError, currentDay: $currentDay, weatherData: $weatherData)';
+    return 'HomeScreenState(isLoading: $isLoading, isError: $isError, currentDay: $currentDay, searchResult: $searchResult, weatherData: $weatherData)';
   }
 
   @override
@@ -317,6 +493,7 @@ class _$_HomeScreenState
       ..add(DiagnosticsProperty('isLoading', isLoading))
       ..add(DiagnosticsProperty('isError', isError))
       ..add(DiagnosticsProperty('currentDay', currentDay))
+      ..add(DiagnosticsProperty('searchResult', searchResult))
       ..add(DiagnosticsProperty('weatherData', weatherData));
   }
 
@@ -330,13 +507,15 @@ class _$_HomeScreenState
             (identical(other.isError, isError) || other.isError == isError) &&
             (identical(other.currentDay, currentDay) ||
                 other.currentDay == currentDay) &&
+            const DeepCollectionEquality()
+                .equals(other._searchResult, _searchResult) &&
             (identical(other.weatherData, weatherData) ||
                 other.weatherData == weatherData));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, isLoading, isError, currentDay, weatherData);
+  int get hashCode => Object.hash(runtimeType, isLoading, isError, currentDay,
+      const DeepCollectionEquality().hash(_searchResult), weatherData);
 
   @JsonKey(ignore: true)
   @override
@@ -350,6 +529,7 @@ abstract class _HomeScreenState implements HomeScreenState {
       {required final bool isLoading,
       required final bool isError,
       required final String currentDay,
+      required final Map<String, dynamic> searchResult,
       required final WeatherModel weatherData}) = _$_HomeScreenState;
 
   @override
@@ -358,6 +538,8 @@ abstract class _HomeScreenState implements HomeScreenState {
   bool get isError;
   @override
   String get currentDay;
+  @override
+  Map<String, dynamic> get searchResult;
   @override
   WeatherModel get weatherData;
   @override
