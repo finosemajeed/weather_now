@@ -5,6 +5,8 @@ A new Flutter project.
 ## Getting Started
 
 Live weather fetching mobile Application developed using flutter.
+Statemanagement is achieved using Flutter_bloc.
+weather Api is integrated for live updation of weather
 
 ## Dependencies:
 
